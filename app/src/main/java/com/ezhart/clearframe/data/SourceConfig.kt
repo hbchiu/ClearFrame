@@ -12,7 +12,7 @@ data class SourceConfig(
     val source: PhotoSource,
     val immichUrl: String = "",
     val immichApiKey: String = "",
-    val immichAlbumId: String = ""
+    val immichAlbumIds: List<String> = emptyList()
 )
 
 fun loadConfig(context: Context): SourceConfig {
@@ -41,6 +41,6 @@ fun loadConfig(context: Context): SourceConfig {
         source = source,
         immichUrl = props["immich_url"] ?: "",
         immichApiKey = props["immich_api_key"] ?: "",
-        immichAlbumId = props["immich_album"] ?: ""
+        immichAlbumIds = props["immich_albums"]?.split(",")?.map { it.trim() } ?: emptyList()
     )
 }

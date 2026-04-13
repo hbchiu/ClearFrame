@@ -1,0 +1,4 @@
+source=immich
+immich_url=http://YOUR_IMMICH_SERVER_IP:2283/
+immich_api_key=YOUR_API_KEY_HERE
+immich_album=YOUR_ALBUM_UUID_HERE,UUID2,UUID3
